@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 export const storageSlice = createSlice({
     name: 'storage',
     initialState: {
-        selectedStorageId: 1,
+        selectedStorageId: 12,
         data: [
             { id: 1, storageName: 'fridge', houseIds: [1, 2] },
             { id: 2, storageName: 'freezer', houseIds: [1] },

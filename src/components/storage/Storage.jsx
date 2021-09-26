@@ -1,10 +1,12 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { selectStorage } from '../../store/reducers/storageSlice';
+import { useSelector } from 'react-redux';
 
 const Storage = ({ storage }) => {
     const { id, storageName } = storage;
     const dispatch = useDispatch();
+    const selectedStorageId = useSelector(state => state.storages.selectedStorageId);
 
     const handleSelect = () => {
         dispatch(selectStorage(id));
@@ -12,7 +14,8 @@ const Storage = ({ storage }) => {
 
     return (
         <>
-            <h1 onClick={handleSelect}>{storageName}</h1>
+            <h1 onClick={handleSelect}>{storageName} {selectedStorageId === storage.id ? '*' : null}</h1>
+            
         </>
     )
 }
