@@ -5,6 +5,7 @@ import StorageList from './components/storageList/StorageList';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 import ItemList from './components/itemList/ItemList';
+import ItemAdd from './components/itemAdd/ItemAdd';
 
 const App = () => {
   return (
@@ -17,6 +18,8 @@ const App = () => {
           </Route>
           <Route path="/:houseId">
             <StorageList />
+
+            <ItemAdd />
             <ItemList />
           </Route>
         </Switch>

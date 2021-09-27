@@ -3,14 +3,33 @@ import { createSlice } from '@reduxjs/toolkit';
 export const itemsSlice = createSlice({
     name: 'items',
     initialState: {
-        data: [
-            { id: 1, itemName: 'item 1', storage_id: 1, house_id: 1 },
-            { id: 2, itemName: 'item 2', storage_id: 1, house_id: 1  },
-            { id: 3, itemName: 'item 3', storage_id: 1, house_id: 1  },
-            { id: 4, itemName: 'item 4', storage_id: 2, house_id: 1 },
-            { id: 5, itemName: 'item 5', storage_id: 1, house_id: 2  },
-            { id: 6, itemName: 'item 6', storage_id: 1, house_id: 2  },
-        ]
+        data: {
+            1: //item Id
+                { id: 1, itemName: 'item 1', storageId: 1},
+            2:
+                { id: 2, itemName: 'item 2', storageId: 2},
+
+            //     [
+                    
+            //         { id: 2, itemName: 'item 2', storageId: 1},
+            //         { id: 3, itemName: 'item 3', storageId: 1},
+            //         { id: 4, itemName: 'item 5', storageId: 1},
+            //         { id: 5, itemName: 'item 6', storageId: 1}
+            //     ],
+            // 2: //storage Id
+            //     [
+            //         { id: 1, itemName: 'item 2.1' },
+            //         { id: 2, itemName: 'item 2.2' },
+            //         { id: 3, itemName: 'item 2.3' },
+            //         { id: 4, itemName: 'item 2.5' },
+            //         { id: 5, itemName: 'item 2.6' }
+            //     ],
+
+            // 3: //storage Id
+            //     [
+            //         { id: 1, itemName: 'item 3.1' }
+            //     ]
+        }
     },
     reducers: {
         addItem: (state, action) => {

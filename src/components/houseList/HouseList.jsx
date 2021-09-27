@@ -4,8 +4,9 @@ import House from '../house/House';
 
 
 const HouseList = () => {
-    const houses = useSelector(state => state.houses.data);
-    
+    // Object.values() -> връща арей от стойностите на обекта
+    const houses = Object.values(useSelector(state => state.houses.data));
+
     if (houses.length < 1) {
         return (
             <section>
@@ -15,6 +16,7 @@ const HouseList = () => {
     }
 
     const houseList = houses.map(house => {
+        console.log(house)
         return (
             <li key={house.id}>
                 <House {...house} />

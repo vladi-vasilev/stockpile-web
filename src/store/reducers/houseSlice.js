@@ -1,20 +1,26 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+// useParams over state,
+// worker check out "comlink"
+// https://web.dev/progressive-web-apps/
+
 export const houseSlice = createSlice({
     name: 'house',
     initialState: {
         selectedHouseId: 1,
-        data: [
-            { id: 1, houseName: 'house 1' },
-            { id: 2, houseName: 'house 2' },
-        ]
+        data: {
+            1: // house id
+                { id: 1, houseName: 'house 1' },
+            2: // house id
+                { id: 2, houseName: 'house 2' },
+        }
     },
     reducers: {
         addHouse: (state, action) => {
-            state.data.push(action.payload);
+            state.data[action.payload.id] = action.payload;
         },
         deleteHouse: (state, action) => {
-            state.data = state.data.filter(house => house.id !== action.payload);
+            delete state.data[action.payload];
         },
         selectHouse: (state, action) => {
             state.selectedHouseId = action.payload;

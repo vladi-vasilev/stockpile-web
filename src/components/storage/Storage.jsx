@@ -4,8 +4,8 @@ import { selectStorage } from '../../store/reducers/storageSlice';
 import { useSelector } from 'react-redux';
 
 const Storage = ({ storage }) => {
-    const { id, storageName } = storage;
     const dispatch = useDispatch();
+    const { id, storageName } = storage;
     const selectedStorageId = useSelector(state => state.storages.selectedStorageId);
 
     const handleSelect = () => {
@@ -15,7 +15,6 @@ const Storage = ({ storage }) => {
     return (
         <>
             <h1 onClick={handleSelect}>{storageName} {selectedStorageId === storage.id ? '*' : null}</h1>
-            
         </>
     )
 }
